@@ -1,0 +1,22 @@
+---
+import Box from '../components/Box.jsx';
+
+const title = "Don't panic & carry on";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>experimentalReactChildren escaping</title>
+	</head>
+	<body>
+		<h2>Server only</h2>
+		<Box id="static">
+			<p title={title}>{title}</p>
+			<p>Fish&nbsp;&amp;&nbsp;chips &copy;</p>
+		</Box>
+
+		<h2>Hydrated with client:load</h2>
+		<Box id="island" client:load><p title={title}>{title}</p></Box>
+	</body>
+</html>
