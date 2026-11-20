@@ -1,22 +1,20 @@
 ---
 import Box from '../components/Box.jsx';
-
-const title = "Don't panic & carry on";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>experimentalReactChildren escaping</title>
+		<title>experimentalReactChildren text and whitespace</title>
 	</head>
 	<body>
 		<h2>Server only</h2>
-		<Box id="static">
-			<p title={title}>{title}</p>
-			<p>Fish&nbsp;&amp;&nbsp;chips &copy;</p>
-		</Box>
+		<Box id="static"><p><strong>Hello</strong> <em>world</em></p></Box>
+		<Box id="pre"><pre><b>Hello</b>
+<b>world</b></pre></Box>
 
 		<h2>Hydrated with client:load</h2>
-		<Box id="island" client:load><p title={title}>{title}</p></Box>
+		<Box id="space" client:load><p><strong>Hello</strong> <em>world</em></p></Box>
+		<Box id="text" client:load>Hello <b>world</b></Box>
 	</body>
 </html>
